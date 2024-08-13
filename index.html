@@ -10,8 +10,13 @@
 </head>
 
 <body>
-    <h1 class="title">Etch-A-Sketch</h1>
-    <button class="new">New</button>
+    <header>
+        <h1 class="title">Etch-A-Sketch</h1>
+        <label for="grid-size">Number of squares per side (2-100):</label>
+        <input type="number" name="grid-size" id="grid-size" min="2" max="100">
+        <button class="new">New</button>
+    </header>
+
     <div class="grid-container"></div>
 </body>
 <script defer src="script.js"></script>

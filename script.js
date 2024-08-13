@@ -2,13 +2,14 @@ const grid = document.querySelector('.grid-container');
 
 let squaresPerSide = 4;
 let gridSize = squaresPerSide ** 2;
-let gridLength = 100 / Math.floor(Math.sqrt(gridSize));
+let gridLength = 80 / Math.floor(Math.sqrt(gridSize));
 let width = `1 1 ${gridLength}vw`;
 let height = `${gridLength}vw`;
 
 let newButton = document.querySelector('.new');
 newButton.addEventListener('click', () => {
-    squaresPerSide = prompt("Enter number of squares per side", "4");
+    let input = document.querySelector('#grid-size');
+    squaresPerSide = Math.min(input.value, 100);
     gridSize = squaresPerSide ** 2;
     clearGrid();
     drawGrid(gridSize);
@@ -17,8 +18,8 @@ newButton.addEventListener('click', () => {
 
 function drawGrid(numberOfSquares) {
     for (let index = 0; index < numberOfSquares; index++) {
-        gridLength = 100 / Math.floor(Math.sqrt(numberOfSquares));
-        width = `1 1 ${gridLength}vw`;
+        gridLength = 85 / Math.floor(Math.sqrt(numberOfSquares));
+        width = `0 1 ${gridLength}vw`;
         height = `${gridLength}vw`;
 
         const square = document.createElement('div');
